@@ -1,8 +1,11 @@
+const fs = require("fs");
+const { EOL } = require("os");
+
 function read() {
-  /**
-   * Прочесть файл puzzles.txt в кодировке 'utf-8' и вернуть эти данные из функции
-   */
+  return fs.readFileSync("./puzzles.txt", "utf-8").split(EOL);
 }
+
+const firstStr = read()[0];
 
 function solve() {
   /**
