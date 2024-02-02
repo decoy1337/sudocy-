@@ -7,12 +7,22 @@ function read() {
 
 const firstStr = read()[0];
 
-function solve() {
-  /**
-   * Принимает игровое поле в том формате, в котором его вернули из функции read.
-   * Возвращает игровое поле после попытки его решить.
-   */
-}
+
+  function solve() {
+    const res = firstStr.match(/.{1,9}/g).map((el) => el.split(""));
+    for (const el of res) {
+      for (let i = 0; i < el.length; i += 1) {
+        const num = Math.floor(Math.random() * 9) + 1;
+        if (el[i] === "-") {
+          el[i] = num.toString();
+        }
+      }
+    }
+    console.log(res);
+  }
+  
+  solve();
+
 
 function isSolved() {
   /**
